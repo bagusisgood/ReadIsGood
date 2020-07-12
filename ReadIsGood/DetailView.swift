@@ -45,7 +45,7 @@ struct DetailView: View {
                         Spacer()
                         
                         Text(self.book.review ?? "No review")
-                            .lineLimit(3)
+                            // .lineLimit(3)
                             .multilineTextAlignment(.center)
 
                         RatingView(rating: .constant(Int(self.book.rating)))
