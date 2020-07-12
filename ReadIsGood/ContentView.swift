@@ -17,21 +17,54 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Count: \(books.count)")
+            List {
+                ForEach(books, id: \.self) { book in
+                    NavigationLink(destination: Text(book.title ?? "Unknown Title")) {
+                        EmojiRatingView(rating: book.rating)
+                            .font(.largeTitle)
+                        
+                        VStack (alignment: .leading) {
+                            Text(book.title ?? "Unknown Title")
+                                .font(.headline)
+                            Text(book.author ?? "Unkown Author")
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+                .onDelete(perform: removeBooks)
+                
             }
-                .navigationBarTitle("ReadIsGood")
-                .navigationBarItems(trailing: Button(action: {
+                .navigationBarTitle("READisgood")
+                .navigationBarItems(
+                    
+                    leading: EditButton(),
+                    
+                    trailing: Button(action: {
                     self.showingAddScreen.toggle()
-            }) {
-                Image(systemName: "plus")
-            })
+                    }) {
+                        Image(systemName: "plus")
+                        
+                })
                 .sheet(isPresented: $showingAddScreen) {
                     AddBookView().environment(\.managedObjectContext, self.moc)
             }
             
         }
     }
+    
+    func removeBooks(at offsets: IndexSet) {
+        for index in offsets {
+            let book = books[index]
+            moc.delete(book)
+        }
+        
+        do {
+            try moc.save()
+        } catch {
+            // handle the Core Data error
+        }
+    }
+    
 }
 
 #if DEBUG
