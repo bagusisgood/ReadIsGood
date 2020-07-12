@@ -17,6 +17,7 @@
 		32B20AE824BA216C005A8AD6 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B20AE724BA216C005A8AD6 /* AddBookView.swift */; };
 		32B20AEA24BB2AAA005A8AD6 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B20AE924BB2AAA005A8AD6 /* RatingView.swift */; };
 		32B20AEC24BB2C5C005A8AD6 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B20AEB24BB2C5C005A8AD6 /* EmojiRatingView.swift */; };
+		32B20AEE24BB41E7005A8AD6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B20AED24BB41E7005A8AD6 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		32B20AE724BA216C005A8AD6 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		32B20AE924BB2AAA005A8AD6 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		32B20AEB24BB2C5C005A8AD6 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		32B20AED24BB41E7005A8AD6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				32B20AD224B8E866005A8AD6 /* SceneDelegate.swift */,
 				32B20AD724B8E866005A8AD6 /* ContentView.swift */,
 				32B20AE724BA216C005A8AD6 /* AddBookView.swift */,
+				32B20AED24BB41E7005A8AD6 /* DetailView.swift */,
 				32B20AE924BB2AAA005A8AD6 /* RatingView.swift */,
 				32B20AEB24BB2C5C005A8AD6 /* EmojiRatingView.swift */,
 				32B20AD924B8E86A005A8AD6 /* Assets.xcassets */,
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32B20AD624B8E866005A8AD6 /* ReadIsGood.xcdatamodeld in Sources */,
+				32B20AEE24BB41E7005A8AD6 /* DetailView.swift in Sources */,
 				32B20AD124B8E866005A8AD6 /* AppDelegate.swift in Sources */,
 				32B20AEC24BB2C5C005A8AD6 /* EmojiRatingView.swift in Sources */,
 				32B20AD824B8E866005A8AD6 /* ContentView.swift in Sources */,
