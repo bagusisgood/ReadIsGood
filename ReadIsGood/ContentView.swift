@@ -34,7 +34,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                .onDelete(perform: removeBooks)
+                .onDelete(perform: deleteBooks)
                 
             }
                 .navigationBarTitle("READisgood")
@@ -55,17 +55,14 @@ struct ContentView: View {
         }
     }
     
-    func removeBooks(at offsets: IndexSet) {
-        for index in offsets {
-            let book = books[index]
+    func deleteBooks(at offsets: IndexSet) {
+        for offset in offsets {
+            let book = books[offset]
             moc.delete(book)
         }
         
-        do {
-            try moc.save()
-        } catch {
-            // handle the Core Data error
-        }
+        try? moc.save()
+        
     }
     
 }
