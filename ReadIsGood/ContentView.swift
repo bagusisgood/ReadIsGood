@@ -11,8 +11,8 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Book.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \Book.author, ascending: true),
-        NSSortDescriptor(keyPath: \Book.title, ascending: true)
+        NSSortDescriptor(keyPath: \Book.title, ascending: true),
+        NSSortDescriptor(keyPath: \Book.author, ascending: true)
     ]) var books: FetchedResults<Book>
     @Environment(\.presentationMode) var presentationMode
     
@@ -29,6 +29,7 @@ struct ContentView: View {
                         VStack (alignment: .leading) {
                             Text(book.title ?? "Unknown Title")
                                 .font(.headline)
+                                .foregroundColor(book.rating == 1 ? .red : .primary)
                             Text(book.author ?? "Unkown Author")
                                 .foregroundColor(.secondary)
                         }

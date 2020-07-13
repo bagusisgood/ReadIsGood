@@ -53,6 +53,11 @@ struct DetailView: View {
                             .multilineTextAlignment(.center)
 
                         RatingView(rating: .constant(Int(self.book.rating)))
+                        
+                        Spacer()
+                        
+                        Text("Added date: \(self.book.addDate ?? "January 01, 1990")")
+                            .font(.caption)
                     }
                     .padding(40)
                     .frame(width: 300, height: 400)

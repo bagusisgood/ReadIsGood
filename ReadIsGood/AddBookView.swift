@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AddBookView: View {
     // read environment wrapper for CoreData
@@ -18,8 +19,9 @@ struct AddBookView: View {
     @State private var title = ""
     @State private var author = ""
     @State private var rating = 3
-    @State private var genre = "Unknown"
+    @State private var genre = "Fantasy"
     @State private var review = ""
+    @State private var date = Date()
     
     // provide list of genres
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
@@ -54,6 +56,11 @@ struct AddBookView: View {
                         newBook.genre = self.genre
                         newBook.rating = Int16(self.rating)
                         newBook.review = self.review
+                        
+                        let formatter = DateFormatter()
+                        formatter.dateStyle = .long
+                        let dateString = formatter.string(from: self.date)
+                        newBook.addDate = dateString
                         
                         // save the instance into core data
                         try? self.moc.save()
